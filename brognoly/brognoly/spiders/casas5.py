@@ -4,7 +4,7 @@ import requests
 # In[]: Function used to get the adress information with Google API Geocode
 def getAdress(address):
     r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +
-                     address + "&key=AIzaSyCXqBCa5QqZ3QwJESDYS4ldIewnUnHcfEU")
+                     address + "&key=<INSERT YOUR KEY>")
     return r.json()
 
 # In[]: Function used to build the adress retrieved from scrapping WebSites
