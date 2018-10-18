@@ -1,0 +1,1 @@
+df = pd.read_json(r'C:\Users\wesle\brognoly\brognoly\spiders\resultado.json', orient='columns',encoding='utf-8')

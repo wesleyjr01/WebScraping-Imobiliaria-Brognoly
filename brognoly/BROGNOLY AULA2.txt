@@ -1,0 +1,44 @@
+//////////////// SCRAPY SHELL COMANDOS ////////////
+
+scrapy shell "pagina.html"
+
+### EXTRAIR O TITULO
+response.css('title').extract() # Tag completa <title>
+response.css('title::text').extract() #Extrair texto da tag <title> da pagina
+
+
+### EXTRAIR OS DORMITORIOS, BANHEIROS, M^2 E VAGAS DE UMA PAGINA COM EXPRESSAO REGULAR
+URL: https://www.brognoli.com.br/imoveis/?filtering=off&sort=newest&ini=1&search_type=16&search_category=445&gsearch_city=FLORIAN%C3%93POLIS&search_city=FLORIAN%C3%93POLIS&search_neighborhood%5B%5D=
+a = response.css('li div::text').re('\S+') #Qualquer caractere que nao seja espacamento.
+b = []
+for i in range(0,len(a),2):
+        b.append(a[i] +' '+ a[i+1])
+
+
+### EXTRAIR O ENDERECO:
+response.css('div.PrevAddress span::text').extract() #extrai a primeira parte
+response.css('div.PrevAddress::text').re('\S+') #extrai a segunda parte
+
+def concatenate_list_data(list,char=''):
+     result= ''
+     for element in list:
+         if element == list[-1]:
+             result += str(element)
+         else:
+             result += str(element)+char
+     return result
+
+print(concatenate_list_data(response.css('div.PrevAddress::text').re('\w+'),'-'))
+
+
+
+### EXTRAIR O TEXTO DE DESCRIÇÃO COMPLETA:
+response.css('blockquote::text').extract()
+
+### EXTRAIR O CODIGO DA CASA
+response.css('div.list-property-code span::text').extract()
+
+### EXTRAIR O PRECO DA CASA
+var = response.css('div.price::text').re('\w+|\$')
+var = concatenate_list_data(var)
+
