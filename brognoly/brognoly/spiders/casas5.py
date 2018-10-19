@@ -2,6 +2,7 @@ import scrapy
 import requests
 
 # In[]: Function used to get the adress information with Google API Geocode
+# Use you own Google KEY in the <INSERT YOUR KEY> in order to make the script work properly
 def getAdress(address):
     r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?address=" +
                      address + "&key=<INSERT YOUR KEY>")
