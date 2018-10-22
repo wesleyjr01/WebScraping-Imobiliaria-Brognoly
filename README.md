@@ -5,7 +5,9 @@ The crawler/scrapper built here has the objective to scrape data from Houses in 
 
 Some plot analysis about the apartments from sale collected can be found here: http://rpubs.com/wesleyjr01
 
-O código do spider/crawler implementado com o FrameWork Scrapy está com nome [casas5.](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/casas5.py) O arquivo resultante como saída deste scrape em formato .json é [este aqui](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/floripa_houses_brognoly.json), que pode ser importado e analisado posteriormente com pandas, ou outra biblioteca de análise de dados.
+The crawler/scrapper code is developed with  Scrapy FrameWork  [here](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/scrappingImoveis.py) .The output from the scrapping process can be .csv or .json, you decide.
+
+One raw data output from this scrapping process is [here](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/sale_floripa_apartments_brognoly.json). A processed data file after scrapping can be found [here](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/df_sale_floripa_apartments_brognoly.csv).
 
 Topics covered in this repo:
 * WebScrapping
