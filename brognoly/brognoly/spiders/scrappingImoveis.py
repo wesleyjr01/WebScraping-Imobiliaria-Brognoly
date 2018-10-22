@@ -70,7 +70,7 @@ class CitacoesSpider(scrapy.Spider):
         
         address = street + neighborhood #Adress combination from other parts
         
-        UserKey = 'AIzaSyCXqBCa5QqZ3QwJESDYS4ldIewnUnHcfEU'
+        UserKey = 'INSERT YOU GOOGLE KEY HERE'
         google_request = getAdress(concatenate_list_data(address,'-')[0],UserKey) #Google API Geocode Request
         lat = google_request.get('results')[0]['geometry']['location']['lat'] #latitude from adress
         lng = google_request.get('results')[0]['geometry']['location']['lng'] #longitude from adress
