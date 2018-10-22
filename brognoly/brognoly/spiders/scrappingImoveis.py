@@ -40,7 +40,7 @@ class CitacoesSpider(scrapy.Spider):
 #    URL_Houses = 'https://www.brognoli.com.br/imoveis/page/1/?filtering=off&sort=newest&ini=1&search_type=16&search_category=445&gsearch_city=FLORIAN%C3%93POLIS&search_city=FLORIAN%C3%93POLIS&search_neighborhood%5B0%5D'
     URL_Everything_Rent = 'https://www.brognoli.com.br/imoveis/page/1/?filtering=off&sort=newest&ini=1&search_type=3&gsearch_city=FLORIAN%C3%93POLIS&search_city=FLORIAN%C3%93POLIS&search_neighborhood%5B0%5D'
     
-    start_urls = [URL_Everything_Rent]
+    start_urls = [RL_Apartments]
 
     #Step1 - In this step we will search for all URL's of houses in all pages
     def parse(self, response):
@@ -71,7 +71,7 @@ class CitacoesSpider(scrapy.Spider):
         address = street + neighborhood #Adress combination from other parts
         
         UserKey = 'INSERT YOU GOOGLE KEY HERE'
-        google_request = getAdress(concatenate_list_data(address,'-')[0],UserKey) #Google API Geocode Request
+        google_request = getAdress(concatenate_list_data(address,'-')[0], UserKey) #Google API Geocode Request
         lat = google_request.get('results')[0]['geometry']['location']['lat'] #latitude from adress
         lng = google_request.get('results')[0]['geometry']['location']['lng'] #longitude from adress
         
