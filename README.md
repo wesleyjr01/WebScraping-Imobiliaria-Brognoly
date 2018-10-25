@@ -9,7 +9,7 @@ The crawler/scrapper code is developed with  Scrapy FrameWork  [here](https://gi
 
 One raw data output from this scrapping process is [here](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/sale_floripa_apartments_brognoly.json). A processed data file after scrapping can be found [here](https://github.com/wesleyjr01/WebScraping-Imobiliaria-Brognoly/blob/master/brognoly/brognoly/spiders/df_sale_floripa_apartments_brognoly.csv).
 
-Using the data from Apartments from sale, [I built this Map using Leafleat Library in R.](https://wesleyjr01.github.io/)
+Using the Scrapping data from Apartments for sale, [I built this Map using Leafleat Library in R.](https://wesleyjr01.github.io/)
 
 Topics covered in this repo:
 * WebScrapping
